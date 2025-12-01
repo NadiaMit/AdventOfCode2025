@@ -16,6 +16,7 @@ start_time = time.time()
 dial = 50
 min = 0
 max = 99
+total_clicks = max - min + 1
 
 # part 1
 zero = 0
@@ -27,10 +28,12 @@ for rotation in input:
   direction = rotation[0]
   amount = int(rotation[1:])
   
+  before_dial = dial
+  
   # if the amount is bigger than the dial range (99-0+1 = 100), reduce it to not count the full rotations
-  if(amount > (max - min + 1)): 
-    #zero_rotation += amount // (max - min + 1)
-    amount = amount % (max - min + 1)
+  if(abs(amount) > total_clicks): 
+    zero_rotation += abs(amount) // total_clicks
+    amount = abs(amount) % total_clicks
   
   if direction == 'R':
     dial += amount
@@ -38,7 +41,10 @@ for rotation in input:
     # if dial is over max, add the overflowing value to min
     if(dial > max):
       dial = min + (dial - max - 1)
-      #zero_rotation += 1
+      
+      # only count zero in rotation if before and after aren't already zero
+      if (before_dial != 0 and dial != 0):
+        zero_rotation += 1
   
   if direction == 'L':
     dial -= amount
@@ -46,19 +52,20 @@ for rotation in input:
     # if dial is below min, add the overflowing value to max
     if(dial < min):
       dial = max - (min - dial - 1)
-      #zero_rotation += 1
+      
+      # only count zero in rotation if before and after aren't already zero
+      if (before_dial != 0 and dial != 0):
+        zero_rotation += 1
   
   if dial == 0:
     zero += 1
-  
-  print(f'rotation: {rotation} -> dial: {dial}{" (zero found)" if dial == 0 else ""}')
 
 
 result_part_1 = zero
-result_part_2 = zero_rotation
+result_part_2 = zero_rotation + zero
 
 # print the results
 print(f"--- Day {day}: ---")
 print(f"Part 1: {result_part_1}") # 1129
-print(f"Part 2: {result_part_2}")
+print(f"Part 2: {result_part_2}") # 6638
 print(f"Duration: {time.time() - start_time} seconds")
