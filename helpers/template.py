@@ -7,7 +7,7 @@ import helpers as helpers
 # get daily input
 day = helpers.get_current_day(__file__)
 isTest = sys.argv[-1] == "test"
-input = helpers.read_input(day, test=isTest)
+input_data = helpers.read_input(day, test=isTest)
 
 # start timer for whole day puzzle after reading the input
 start_time = time.time()
