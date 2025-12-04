@@ -18,7 +18,7 @@ def get_current_day(file_path):
     """
     return file_path.split('\\')[-1].split(".")[0].replace("day", "")
 
-def read_input(day, split_lines=True, test=False):
+def read_input(day, split_lines=True, create_map=False, test=False):
     """
     Reads the input from the current days txt file.
     split_lines: if True, the input will be split by lines [default: True]
@@ -26,6 +26,9 @@ def read_input(day, split_lines=True, test=False):
     """
     path = f"./inputs/day{day}.txt" if not test else "./inputs/test.txt"
     input_result = read_file(path)
+    
+    if create_map:
+        return [list(line) for line in input_result.splitlines()]
     return input_result.splitlines() if split_lines else input_result
 
 def in_bounds(pos, input_map):
@@ -34,4 +37,13 @@ def in_bounds(pos, input_map):
     """
     y, x = pos
     return 0 <= x < len(input_map) and 0 <= y < len(input_map[0])
+
+def print_map(input_map: list[list[str]]):
+    """
+    Prints the input map.
+    """
+    result = ""
+    for row in input_map:
+        result += "".join(row) + "\n"
+    print(result)
 
