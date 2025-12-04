@@ -42,11 +42,11 @@ while True:
                 if 0 <= y + direction[0] < len(input_data) and 0 <= x + direction[1] < len(input_data[0]):
                     if input_data[y + direction[0]][x + direction[1]] == '@':
                         adjacent_rolls += 1
-
+            
             # if fewer than 4 adjacent paper rolls -> curr_pos can be taken
             if adjacent_rolls < 4:
                 found_rolls.append([y, x])
-                
+    
     # part 1
     if not first_iteration_done:
         result_part_1 += len(found_rolls)
@@ -67,5 +67,5 @@ while True:
 # print the results
 print(f"--- Day {day}: ---")
 print(f"Part 1: {result_part_1}") # 1508
-print(f"Part 2: {result_part_2}")
+print(f"Part 2: {result_part_2}") # 8538
 print(f"Duration: {time.time() - start_time} seconds")
