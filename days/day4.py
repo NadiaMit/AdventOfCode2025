@@ -18,17 +18,16 @@ directions = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 
 
 paper_rolls = 0
 # code for both parts
-for y in range(len(input_data)):
-    for x in range(len(input_data[y])):
+for y, row in enumerate(input_data):
+    for x, curr_pos in enumerate(row):
         # get the current positions value
-        curr_pos = input_data[y][x]
         if curr_pos != '@':
             continue
         
         adjacent_rolls = 0
         # check all 8 directions and count the paper rolls
         for direction in directions:
-            if 0 <= y + direction[0] < len(input_data) and 0 <= x + direction[1] < len(input_data[y]):
+            if 0 <= y + direction[0] < len(input_data) and 0 <= x + direction[1] < len(row):
                 if input_data[y + direction[0]][x + direction[1]] == '@':
                     adjacent_rolls += 1
 
