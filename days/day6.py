@@ -29,8 +29,33 @@ for i in range(0, len(parsed_data[0])):
 # part 2
 result_part_2 =  0
 
+columns = []
+sign = ''
+for i in range(len(input_data[0])-1, -1, -1):
+    col = [line[i] for line in input_data[:-1]]
+    columns.append(col)
+    sign += input_data[-1][i]
+    
+    # if empty column -> calculate and reset
+    if (all(c == ' ' for c in col)) or i == 0:
+        
+        op = sign.strip()
+        numbers = []
+        for c in columns:
+            num_str = ''.join(c).strip()
+            if num_str.isdigit():
+                numbers.append(int(num_str))
+        
+        if op == '+':
+            result_part_2 += sum(numbers)
+        elif op == '*':
+            result_part_2 += math.prod(numbers)
+        
+        columns = []
+        sign = ''
+
 # print the results
 print(f"--- Day {day}: ---")
 print(f"Part 1: {result_part_1}") # 6378679666679
-print(f"Part 2: {result_part_2}")
+print(f"Part 2: {result_part_2}") # 11494432585168
 print(f"Duration: {time.time() - start_time} seconds")
