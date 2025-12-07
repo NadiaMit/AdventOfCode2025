@@ -13,14 +13,13 @@ input_data = helpers.read_input(day, test=isTest, create_map=True)
 start_time = time.time()
 
 # code for both parts
-splits = 0
+
+# set starting mark down -> directly below the S
+input_data[1][input_data[0].index('S')] = '|'
+
+splits = 0 
 for y in range(len(input_data)):
     for x in range(len(input_data[0])):
-        
-        # if starting point -> mark the path downwards
-        if input_data[y][x] == 'S':
-            input_data[y+1][x] = '|'
-        
         # if path downwards -> check if splitting happens or simply go down
         if input_data[y][x] == '|':
             if (y+1) < len(input_data) and input_data[y+1][x] == '^':
