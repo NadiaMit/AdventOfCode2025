@@ -54,12 +54,12 @@ def in_bounds(pos, input_map):
     y, x = pos
     return 0 <= x < len(input_map) and 0 <= y < len(input_map[0])
 
-def print_map(input_map: list[list[str]]):
+def print_map(input_map: list[list[object]]):
     """
     Prints the input map.
     """
     result = ""
     for row in input_map:
-        result += "".join(row) + "\n"
+        result += "".join(str(cell) for cell in row) + "\n"
     print(result)
 
