@@ -1,15 +1,19 @@
 import os
 import sys
+from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'helpers')))
 import helpers
+
+# load .env file
+load_dotenv()
 
 # constant paths
 INPUTS_FOLDER = "./inputs"
 DAYS_FOLDER = "./days"
 TEMPLATE_FILE = "./helpers/template.py"
 
-def create_day(day):
+def create_day(day, year):
     """
     Prepares all needed files for a new day.
         - `dayX.py` in the `days` folder with the template content from `template.py`
@@ -26,6 +30,15 @@ def create_day(day):
 
     # create the input file dayX.txt
     helpers.create_file(input_file_path)
+    
+    # try to download the input file from the website
+    try:
+        session_token = os.getenv("SESSION_TOKEN")
+        if not session_token:
+            raise Exception("SESSION_TOKEN not found in .env file.")
+        helpers.download_input(year=year, day=day, session_token=session_token)
+    except Exception as e:
+        print(f"WARNING: Could not download input for day {day}. Error: {e}")
 
     # create the dayX.py file and fill it with the template content
     if os.path.exists(TEMPLATE_FILE):
@@ -69,9 +82,10 @@ if __name__ == "__main__":
     # get the command and the day number
     command = sys.argv[1]
     day_number = sys.argv[2]
+    year = 2025
     
     # execute the command based on the input
     if command == "create":
-        create_day(day_number)
+        create_day(day_number, year=year)
     else:
         run_day(day_number)

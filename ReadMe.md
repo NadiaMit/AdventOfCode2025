@@ -13,6 +13,16 @@ This is my try on the Advent of code of 2025 challanges in Python.
 - `inputs` - folder: all my input data for each day is saved the inputs folder as a `dayX.txt` file. I also have a `test.txt` file, that I use for the example input of each days puzzle.
 - `helpers` - folder: contains my `helpers.py` and `template.py` files. The helper files has some functions to read the input data an I am pretty sure, I will add some other helping functions if I see that puzzles will need some generic functionality more than once. And the template file is my base for every days puzzle.
 
+## Automatic input download notice
+
+If you want to use the automatic input download feature, you need to create a `.env` file in the root folder of the project with your valid session token from the Advent of Code website like this:
+
+```bash
+SESSION_TOKEN=your_session_token_here
+```
+
+Additionally you will have to set the `year` variable in the `main.py` file to the wanted year (default is 2025), otherwise the input download will not work or download the input for the wrong year.
+
 ## Create a Day
 
 To create a new day you can run the following command:
@@ -21,7 +31,7 @@ To create a new day you can run the following command:
 
 where `<day>` is the number of the day you want to create.
 
-This will create a new file in the `days` folder called `day<day>.py` (with the content of the `template.py` file is existend) and a new file in the `inputs` folder called `day<day>.txt`.
+This will create a new file in the `days` folder called `day<day>.py` (with the content of the `template.py` file is existend) and a new file in the `inputs` folder called `day<day>.txt`. If you have the automatic input download feature set up correctly (see "Automatic input download notice" above), it will also try to download your input data for that day from the Advent of Code website and fill the `day<day>.txt` file with it.
 
 (You can also create the files by hand if you want of course)
 
