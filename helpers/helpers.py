@@ -1,5 +1,6 @@
 import requests
 
+# INPUT / OUTPUT HELPERS ------------------------------------------------
 def read_file(file_path):
     """
     Reads the content of a file.
@@ -47,6 +48,9 @@ def read_input(day, split_lines=True, create_map=False, test=False):
         return [list(line) for line in input_result.splitlines()]
     return input_result.splitlines() if split_lines else input_result
 
+
+# CODE HELPERS ----------------------------------------------------------------------
+
 def in_bounds(pos, input_map):
     """
     Checks if a position is inside the map.
@@ -63,3 +67,24 @@ def print_map(input_map: list[list[object]]):
         result += "".join(str(cell) for cell in row) + "\n"
     print(result)
 
+def eucleadian_distance_2d(pos_1, pos_2):
+    """
+    Calculates the Euclidean distance between two 2D points.
+    """
+    x_1, y_1 = pos_1
+    x_2, y_2 = pos_2
+    return ((x_1 - x_2) ** 2 + (y_1 - y_2) ** 2) ** 0.5
+
+def eucleadian_distance_3d(pos_1, pos_2):
+    """
+    Calculates the Euclidean distance between two 3D points.
+    """
+    x_1, y_1, z_1 = pos_1
+    x_2, y_2, z_2 = pos_2
+    return ((x_1 - x_2) ** 2 + (y_1 - y_2) ** 2 + (z_1 - z_2) ** 2) ** 0.5
+
+def rectangle_area(width, height):
+    """
+    Calculates the area of a rectangle.
+    """
+    return width * height
