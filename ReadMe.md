@@ -8,15 +8,15 @@ This is my try on the Advent of code of 2025 challanges in Python.
 
 ## My Progress:
 
-- [Day 1](https://adventofcode.com/2025/day/1): ⭐⭐ completed ([my solution](./days/day1.py))
-- [Day 2](https://adventofcode.com/2025/day/2): ⭐⭐ completed ([my solution](./days/day2.py))
-- [Day 3](https://adventofcode.com/2025/day/3): ⭐⭐ completed ([my solution](./days/day3.py))
-- [Day 4](https://adventofcode.com/2025/day/4): ⭐⭐ completed ([my solution](./days/day4.py))
-- [Day 5](https://adventofcode.com/2025/day/5): ⭐⭐ completed ([my solution](./days/day5.py))
-- [Day 6](https://adventofcode.com/2025/day/6): ⭐⭐ completed ([my solution](./days/day6.py))
-- [Day 7](https://adventofcode.com/2025/day/7): ⭐⭐ completed ([my solution](./days/day7.py))
-<!--- [Day 8](https://adventofcode.com/2025/day/8):  not yet completed --->
-- [Day 9](https://adventofcode.com/2025/day/9): ⭐ partially completed ([my solution](./days/day9.py))
+- Day 1 - [Secret Entrance](https://adventofcode.com/2025/day/1): ⭐⭐
+- Day 2 - [Gift Shop](https://adventofcode.com/2025/day/2): ⭐⭐
+- Day 3 - [Lobby](https://adventofcode.com/2025/day/3): ⭐⭐
+- Day 4 - [Printing Department](https://adventofcode.com/2025/day/4): ⭐⭐
+- Day 5 - [Cafeteria](https://adventofcode.com/2025/day/5): ⭐⭐
+- Day 6 - [Trash Compactor](https://adventofcode.com/2025/day/6): ⭐⭐
+- Day 7 - [Laboratories](https://adventofcode.com/2025/day/7): ⭐⭐
+- Day 8 - [Playground](https://adventofcode.com/2025/day/8):
+- Day 9 - [Movie Theater](https://adventofcode.com/2025/day/9): ⭐
 
 ## Structure
 
