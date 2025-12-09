@@ -6,7 +6,7 @@
 
 This is my try on the Advent of code of 2025 challanges in Python.
 
-## My Progress:
+## My Progress
 
 - Day 1 - [Secret Entrance](https://adventofcode.com/2025/day/1): ⭐⭐
 - Day 2 - [Gift Shop](https://adventofcode.com/2025/day/2): ⭐⭐
