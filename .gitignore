@@ -9,3 +9,5 @@ helpers/__pycache__/
 
 # ignore environment files
 *.env
+
+.github
