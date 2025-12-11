@@ -1,6 +1,6 @@
-![](https://img.shields.io/badge/stars_⭐-16-yellow)
-![](https://img.shields.io/badge/days_completed_📅-6-blue)
-![](https://img.shields.io/badge/days_half_completed_🌗-2-white)
+![](https://img.shields.io/badge/stars_⭐-17-yellow)
+![](https://img.shields.io/badge/days_completed_📅-8-blue)
+![](https://img.shields.io/badge/days_half_completed_🌗-1-white)
 
 # Advent of Code 2025 in Python [![Python](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
 
@@ -18,7 +18,7 @@ This is my try on the Advent of code of 2025 challanges in Python.
 - ...<!--Day 8 - [Playground](https://adventofcode.com/2025/day/8):-->
 - Day 9 - [Movie Theater](https://adventofcode.com/2025/day/9): ⭐
 - ...
-- Day 11 - [Reactor](https://adventofcode.com/2025/day/11): ⭐
+- Day 11 - [Reactor](https://adventofcode.com/2025/day/11): ⭐⭐
 
 ## Structure
 

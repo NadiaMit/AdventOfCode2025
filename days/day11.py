@@ -1,5 +1,7 @@
 import sys
 import time
+import functools
+sys.setrecursionlimit(20000)
 
 sys.path.insert(1, sys.path[0].replace("days", "helpers"))
 import helpers as helpers
@@ -18,26 +20,26 @@ for line in input_data:
     device, outputs = line.split(":")
     devices.setdefault(device.strip(), []).extend([out.strip() for out in outputs.strip().split(" ")])
 
-def find_out_path(device, visited=None):
-    if visited is None:
-        visited = []
-    current_visited = visited + [device]
-
-    if device == "out":
+@functools.cache
+def find_out_path(device, target):
+    if device == target:
         return 1
     
-    outputs = devices.get(device, [])
     paths = 0
-    for out in outputs:
-        if out not in current_visited:
-            paths += find_out_path(out, current_visited)
+    for neighbor in devices.get(device, []):
+        paths += find_out_path(neighbor, target)
     return paths
 
 # part 1
-result_part_1 = find_out_path('you', [])
+result_part_1 = find_out_path('you', 'out')
 
 # part 2
-result_part_2 =  0
+# possible paths 'srv' -> 'fft' -> 'dac' -> 'out'
+paths_1 = find_out_path('svr', 'fft') * find_out_path('fft', 'dac') * find_out_path('dac', 'out')
+# possible paths 'srv' -> 'dac' -> 'fft' -> 'out'
+paths_2 = find_out_path('svr', 'dac') * find_out_path('dac', 'fft') * find_out_path('fft', 'out')
+
+result_part_2 = paths_1 + paths_2
 
 # print the results
 print(f"--- Day {day}: ---")
