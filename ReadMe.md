@@ -6,7 +6,7 @@
 
 This is my try on the Advent of code of 2025 challanges in Python.
 
-## My Progress 15/24⭐
+## My Progress 17/24⭐
 
 - Day 1 - [Secret Entrance](https://adventofcode.com/2025/day/1): ⭐⭐
 - Day 2 - [Gift Shop](https://adventofcode.com/2025/day/2): ⭐⭐
@@ -15,7 +15,7 @@ This is my try on the Advent of code of 2025 challanges in Python.
 - Day 5 - [Cafeteria](https://adventofcode.com/2025/day/5): ⭐⭐
 - Day 6 - [Trash Compactor](https://adventofcode.com/2025/day/6): ⭐⭐
 - Day 7 - [Laboratories](https://adventofcode.com/2025/day/7): ⭐⭐
-- ...<!--Day 8 - [Playground](https://adventofcode.com/2025/day/8):-->
+- ...
 - Day 9 - [Movie Theater](https://adventofcode.com/2025/day/9): ⭐
 - ...
 - Day 11 - [Reactor](https://adventofcode.com/2025/day/11): ⭐⭐
