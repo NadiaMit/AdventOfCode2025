@@ -82,9 +82,3 @@ def eucleadian_distance_3d(pos_1, pos_2):
     x_1, y_1, z_1 = pos_1
     x_2, y_2, z_2 = pos_2
     return ((x_1 - x_2) ** 2 + (y_1 - y_2) ** 2 + (z_1 - z_2) ** 2) ** 0.5
-
-def rectangle_area(width, height):
-    """
-    Calculates the area of a rectangle.
-    """
-    return width * height
